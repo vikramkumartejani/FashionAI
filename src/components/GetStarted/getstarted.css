@@ -37,7 +37,13 @@
     padding: .5rem;
 }
 
-
+#my-tooltip-1{
+    width: 100%;
+    max-width: 250px;
+    font-size: 13px;
+    text-align: center;
+    background-color: #000;
+}
 .drop-down-container {
     width: 100%;
     flex-wrap: wrap;
@@ -146,9 +152,7 @@
     padding: .1rem;
     border-radius: 50%;
     float: right;
-    /* border: 1px solid #fff; */
     font-size: 15px;
-    /* font-weight: bold; */
 }
 
 .close:hover,
@@ -167,5 +171,8 @@
         width: 70px;
         height: 70px;
         font-size: 10px;
+    }
+    #my-tooltip-1{
+        max-width: 200px;
     }
 }
