@@ -1,0 +1,22 @@
+.product-container{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 1024px;
+    margin: 1rem auto;
+    width: 100%;
+    padding: .5rem;
+}
+.product-container h3{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.box{
+    background-color: #4d4a4a;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+}
