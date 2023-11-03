@@ -1,22 +1,39 @@
-.product-container{
+.product-main-container {
+    background-color: dimgrey;
+    height: 92vh;
+    width: 100%;
+    color: #fff;
+    padding: 3rem 0;
+}
+
+
+.product-container {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     gap: 10px;
     max-width: 1024px;
-    margin: 1rem auto;
+    margin: auto;
     width: 100%;
-    padding: .5rem;
+    padding:1rem .5rem;
 }
-.product-container h3{
+
+.product-container h3 {
     font-size: 20px;
     font-weight: 500;
 }
 
-.box{
-    background-color: #4d4a4a;
+.box {
+    background-color: black;
     color: #fff;
     width: 100%;
     text-align: center;
     padding: 1rem;
+}
+
+
+@media screen and (max-width: 400px) {
+    .product-main-container {
+        padding: 1rem 0;
+    }
 }

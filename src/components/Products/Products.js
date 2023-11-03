@@ -7,21 +7,23 @@ import Pants from './Pants'
 const Products = () => {
   return (
     <>
-    <Navbar/>
-    <div className='product-container'>
-        <div>
+      <Navbar />
+      <div className='product-main-container'>
+        <div className='product-container'>
+          <div>
             <h3>Shirts:</h3>
-            <Shirt/>
-        </div>
-        <div>
+            <Shirt />
+          </div>
+          <div>
             <h3>Pants</h3>
-            <Pants/>
-        </div>
-        <div>
+            <Pants />
+          </div>
+          <div>
             <h3>Shoes:</h3>
-            <Shoes/>
+            <Shoes />
+          </div>
         </div>
-    </div>
+      </div>
     </>
   )
 }
