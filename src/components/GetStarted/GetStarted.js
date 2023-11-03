@@ -18,41 +18,49 @@ const GetStarted = () => {
     }
     return (
         <>
-            <Navbar/>
-        <div className='main-container-get'>
-            <div className='get-started-container'>
-                <h1>
-                    AI revolutionizes industries, predicting outcomes and fostering innovation.
-                    Its cognitive abilities empower efficient decision-making, transforming the way we live and work.
-                </h1>
-                <button onClick={openModal}>Get Started</button>
-            </div>
-
-            {modalIsOpen && (
-                <div className="modal">
-                    <div className="modal-content">
-                        <div className='about-you'>
-                            About You<BsQuestion className='icon-about-you' />
-                        </div>
-                        <div className='drop-down-container'>
-                            <div>Avatar Optional</div>
-                            <CustomDropdown />
-                            <div className='personality-content'>
-                                <textarea placeholder='A few words about your personality...'/>
-                            </div>
-                        </div>
-                        <Link to='/product'>
-                        <button  className='submit'>Submit</button>
-                        </Link>
-
-                        {/* Close Modal */}
-                        <button className="close" onClick={closeModal}>
-                            <AiOutlineClose />
-                        </button>
-                    </div>
+            <Navbar />
+            <div className='main-container-get'>
+                <div className='get-started-container'>
+                    <h1>
+                        AI revolutionizes industries, predicting outcomes and fostering innovation.
+                        Its cognitive abilities empower efficient decision-making, transforming the way we live and work.
+                    </h1>
+                    <button onClick={openModal}>Get Started</button>
                 </div>
-            )}
-        </div>
+
+                {modalIsOpen && (
+                    <div className="modal">
+                        <div className="modal-content">
+                            <div className='about-you'>
+                                About You<BsQuestion className='icon-about-you' />
+                            </div>
+                            <div className='drop-down-container'>
+                                    <div className="image-avotor">
+                                        <input type="file" id="file" className="hidden" />
+                                        <label
+                                            for="file"
+                                            className="text-border cursor-pointer flex flex-col items-center justify-center text-center p-7 gap-2 text-sm font-extrabold"
+                                        >
+                                            Avator <br/> Optional
+                                        </label>
+                                    </div>
+                                <CustomDropdown />
+                                <div className='personality-content'>
+                                    <textarea placeholder='A few words about your personality...' />
+                                </div>
+                            </div>
+                            <Link to='/product'>
+                                <button className='submit'>Submit</button>
+                            </Link>
+
+                            {/* Close Modal */}
+                            <button className="close" onClick={closeModal}>
+                                <AiOutlineClose />
+                            </button>
+                        </div>
+                    </div>
+                )}
+            </div>
         </>
     )
 }
