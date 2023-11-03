@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-  import { FaBarsStaggered } from "react-icons/fa6";
+import { FaBarsStaggered } from "react-icons/fa6";
+import { IoCloseSharp } from "react-icons/io5";
 import "./navbar.css";
 
 const Navbar = () => {
@@ -8,7 +9,10 @@ const Navbar = () => {
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
- 
+
+    const closeMobileMenu = () => {
+        setIsMobileMenuOpen(false);
+    };
 
     return (
         <div className="nav-container">
@@ -18,7 +22,6 @@ const Navbar = () => {
                         <li>
                             <a href="/">Navbar</a>
                         </li>
-
                     </ul>
                 </div>
                 <div className="toggle-menu">
@@ -27,13 +30,14 @@ const Navbar = () => {
             </div>
             {isMobileMenuOpen && (
                 <div className="mobile_navigation">
-
                     <div className="navigation-links">
+                        <div className="close-nav" onClick={closeMobileMenu}>
+                            <IoCloseSharp />
+                        </div>
                         <ul>
                             <li>
                                 <a href="/">Navbar</a>
                             </li>
-
                         </ul>
                     </div>
                 </div>
