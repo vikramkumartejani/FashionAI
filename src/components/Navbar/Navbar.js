@@ -20,7 +20,10 @@ const Navbar = () => {
                 <div className="links-container">
                     <ul>
                         <li>
-                            <a href="/">Navbar</a>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="/">About Us</a>
                         </li>
                     </ul>
                 </div>
@@ -36,7 +39,13 @@ const Navbar = () => {
                         </div>
                         <ul>
                             <li>
-                                <a href="/">Navbar</a>
+                                <a href="/">Home</a>
+                            </li>
+                            <li>
+                                <a href="/">About Us</a>
+                            </li>
+                            <li>
+                                <a href="/">Contact</a>
                             </li>
                         </ul>
                     </div>

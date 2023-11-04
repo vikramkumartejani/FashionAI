@@ -1,19 +1,16 @@
 .nav-container {
-  background-color: #ffff;
+  background-color: #00acc1;
   width: 100%;
-  /* position: fixed; */
-  position: relative;
 }
 
 .navbar-container {
   display: flex;
   width: 100%;
   margin: auto;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  height: 9vh;
-  padding: 10px 20px;
-  /* position: absolute; */
+  height: 10vh;
+  padding: 0 20px;
   top: 0;
   background-color: transparent;
 }
@@ -21,6 +18,7 @@
 .links-container ul {
   list-style-type: none;
   display: flex;
+  align-items: center;
 }
 
 .links-container ul li {
@@ -28,25 +26,19 @@
 }
 
 .links-container ul li a {
+  font-size: 1rem;
   text-decoration: none;
-  color: #333;
+  color: #fff;
 }
 
 .toggle-menu {
   display: none;
-}
-
-.mobile_navigation {
-  display: none;
+  color: white;
 }
 
 @media (max-width: 768px) {
   .navbar-container {
-    justify-content: right;
-  }
-
-  .links-container {
-    display: none;
+    justify-content: space-between;
   }
 
   .toggle-menu {
@@ -61,6 +53,7 @@
     right: 0;
     width: 100%;
     display: flex;
+    justify-content: space-between;
     background-color: black;
     padding: 20px;
     top: 0;
@@ -80,10 +73,9 @@
     right: 1rem;
   }
 
-
-
   .navigation-links ul {
     list-style-type: none;
+
     margin-top: 2.5rem;
   }
 

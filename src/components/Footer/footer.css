@@ -1,11 +1,12 @@
 .footer-container{
     padding: 1rem;
     width: 100%;
-    background-color: black;
+    background-color: #e9fbf0;
+    border-top: 2px solid #c6f6d9;
 }
-.footer-container h3{
-    font-size: 1rem;
+.footer-container p{
+    font-size: .9rem;
     text-align: center;
     font-weight: 400;
-    color: #fff;
+    color: #0f5c2e;
 }

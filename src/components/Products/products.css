@@ -1,44 +1,98 @@
-.product-main-container {
-    background-color: dimgrey;
-    /* height: 92vh; */
-    width: 100%;
-    color: #fff;
-    padding: 3rem 0;
-}
-
-
-.product-container {
+.products-main-container {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     gap: 10px;
     max-width: 1024px;
-    margin: auto;
     width: 100%;
-    padding:1rem .5rem;
+    height: 100%;
+    margin: auto;
+    padding: 3rem 1rem;
+    position: relative;
 }
-
-.product-container h3 {
+.product-container{
+    margin-bottom: 3rem;
+}
+.product-container h1 {
     font-size: 20px;
     font-weight: 500;
+    margin-bottom: 1rem;
+}
+.product-slider{
+    position: relative;
+}
+.slider-btn{
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.slider-btn .icon-btn{
+    font-size: 1.7rem;
+}
+.slider-prev-btn{
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    z-index: 1001;
+}
+.slider-next-btn{
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    bottom: 50%;
+    z-index: 1001;
 }
 
 .box {
-    background-color: black;
-    color: #fff;
+    color: black;
+    background-color: #fff;
     width: 100%;
-    text-align: center;
-    padding: 1rem;
+    overflow: hidden;
+    border-radius: .6rem;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
 }
-
-.box img{
+.product-img{
     width: 100%;
     height: 200px;
 }
+.product-img img{
+    width: 100%;
+    height: 200px;
+}
+.box .product-detail{
+    padding: 1rem;
+}
+.box .product-detail h3{
+    font-size: 15px;
+    font-weight: 500;
 
+}
 
 @media screen and (max-width: 400px) {
     .product-main-container {
         padding: 1rem 0;
+    }
+    .slider-btn{
+        width: 30px;
+        height: 30px;
+    }
+    
+    .slider-btn .icon-btn{
+        font-size: 1.5rem;
+    }
+    .slider-prev-btn{
+        left: 0px;
+    }
+    .slider-next-btn{
+        right: 0px;
     }
 }

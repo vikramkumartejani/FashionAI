@@ -6,7 +6,7 @@ import "./dropdown.css";
 const CustomDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState("");
-  const [selectedLocation, setSelectedLocation] = useState(null); // Add this state
+  const [selectedLocation, setSelectedLocation] = useState(null);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -14,7 +14,7 @@ const CustomDropdown = () => {
 
   const handleOptionClick = (location) => {
     setSelectedOption(location);
-    setSelectedLocation(location); // Store the selected location
+    setSelectedLocation(location);
     setIsOpen(false);
   };
 

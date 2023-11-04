@@ -3,7 +3,6 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { BsQuestion } from 'react-icons/bs';
 import CustomDropdown from '../Dropdown/Dropdown';
 import './getstarted.css'
-import Navbar from '../Navbar/Navbar';
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import { Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
@@ -20,13 +19,12 @@ const GetStarted = () => {
     }
     return (
         <>
-            <Navbar />
             <div className='main-container-get'>
                 <div className='get-started-container'>
-                    <h1>
+                    <p>
                         AI revolutionizes industries, predicting outcomes and fostering innovation.
                         Its cognitive abilities empower efficient decision-making, transforming the way we live and work.
-                    </h1>
+                    </p>
                     <button onClick={openModal}>Get Started</button>
                 </div>
 
