@@ -57,6 +57,9 @@ const Shoes = () => {
 
     const breakpoints = {
         0: {
+            slidesPerView: 1,
+        },
+        400: {
             slidesPerView: 2,
         },
         768: {
@@ -71,7 +74,6 @@ const Shoes = () => {
             <div className='product-container'>
                 <div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '8px', width: '100%' }}>
-                        {/* prevButton */}
                         <div
                             onClick={goPrev}
                             style={{ width: '1.75rem', height: '1.75rem', display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius: '0.25rem', cursor: 'pointer' }}
@@ -89,7 +91,6 @@ const Shoes = () => {
                             spaceBetween={10}
                             slidesPerView={3}
                         >
-                            {/* map slider */}
                             {shoes.map((item, index) => (
                                 <SwiperSlide key={item.id} className='box'>
                                     <img src={item.shoesimg} alt={item.title} />
@@ -99,7 +100,6 @@ const Shoes = () => {
                                 </SwiperSlide>
                             ))}
                         </Swiper>
-                        {/* nextButton */}
                         <div
                             onClick={goNext}
                             style={{ width: '1.75rem', height: '1.75rem', display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius: '0.25rem', cursor: 'pointer' }}

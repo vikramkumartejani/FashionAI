@@ -6,6 +6,7 @@ import './getstarted.css'
 import Navbar from '../Navbar/Navbar';
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import { Link } from 'react-router-dom';
+import Footer from '../Footer/Footer';
 
 const GetStarted = () => {
     const [modalIsOpen, setIsOpen] = useState(false);
@@ -67,6 +68,7 @@ const GetStarted = () => {
                     </div>
                 )}
             </div>
+            <Footer />
         </>
     )
 }

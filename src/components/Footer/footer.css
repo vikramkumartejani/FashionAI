@@ -1,0 +1,11 @@
+.footer-container{
+    padding: 1rem;
+    width: 100%;
+    background-color: black;
+}
+.footer-container h3{
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 400;
+    color: #fff;
+}
