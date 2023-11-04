@@ -47,7 +47,7 @@
 
   .mobile_navigation {
     position: fixed;
-    z-index: 1001;
+    z-index: 1003;
     height: 100vh;
     bottom: 0;
     right: 0;
