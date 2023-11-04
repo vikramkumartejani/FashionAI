@@ -1,38 +1,43 @@
 import React from 'react'
 import './products.css'
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
-
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import shoe from '../../assets/shoes.png'
 
 const Shoes = () => {
 
     const shoes = [
         {
             id: 1,
+            shoesimg: shoe,
             title: "Product Card1",
         },
         {
             id: 2,
+            shoesimg: shoe,
             title: "Product Card2",
         },
         {
             id: 3,
+            shoesimg: shoe,
             title: "Product Card3",
         },
         {
             id: 4,
+            shoesimg: shoe,
             title: "Product Card4",
         },
         {
             id: 5,
+            shoesimg: shoe,
             title: "Product Card5",
         },
         {
             id: 6,
+            shoesimg: shoe,
             title: "Product Card6",
         },
 
@@ -87,6 +92,7 @@ const Shoes = () => {
                             {/* map slider */}
                             {shoes.map((item, index) => (
                                 <SwiperSlide key={item.id} className='box'>
+                                    <img src={item.shoesimg} alt={item.title} />
                                     <h3 style={{ fontSize: '1rem', fontWeight: '500' }}>
                                         {item.title}
                                     </h3>

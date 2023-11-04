@@ -11,7 +11,7 @@ const Products = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 500);
+    }, 1000);
   }, []);
   return (
     <>
