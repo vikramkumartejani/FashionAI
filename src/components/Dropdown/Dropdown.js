@@ -1,12 +1,11 @@
-import React, { useState } from "react";
-import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
+import React, { useState } from 'react';
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
 
-import "./dropdown.css";
+import './dropdown.css';
 
-const CustomDropdown = () => {
+const CustomDropdown = ({ showError, handleDropdownChange }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState("");
-  const [selectedLocation, setSelectedLocation] = useState(null);
+  const [selectedOption, setSelectedOption] = useState(null);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -14,59 +13,47 @@ const CustomDropdown = () => {
 
   const handleOptionClick = (location) => {
     setSelectedOption(location);
-    setSelectedLocation(location);
+    handleDropdownChange(location);
     setIsOpen(false);
   };
 
   const locations = [
-    "ESTJ",
-    "ENTJ",
-    "ESFJ",
-    "ENFJ",
-    "ISTJ",
-    "ISFJ",
-    "INTJ",
-    "INFJ",
-    "ESTP",
-    "ESFP",
-    "ENTP",
-    "ENFP",
-    "ISTP",
-    "ISFP",
-    "INTP",
-    "INFP",
+    'ESTJ',
+    'ENTJ',
+    'ESFJ',
+    'ENFJ',
+    'ISTJ',
+    'ISFJ',
+    'INTJ',
+    'INFJ',
+    'ESTP',
+    'ESFP',
+    'ENTP',
+    'ENFP',
+    'ISTP',
+    'ISFP',
+    'INTP',
+    'INFP',
   ];
 
   return (
-    <div className="dropdown-container">
-      <div className="custom-dropdown">
-        <div className="dropdown-header" onClick={toggleDropdown}>
-          <p className="selected-option">
-            {selectedOption || "Personality Required"}
-          </p>
-          <p className="dropdown-icon">
-            {isOpen ? (
-              <MdKeyboardArrowUp className="icon" />
-            ) : (
-              <MdKeyboardArrowDown className="icon" />
-            )}
-          </p>
-        </div>
-        {isOpen && (
-          <ul className="dropdown-options">
-            {locations.map((location, index) => (
-              <li
-                key={index}
-                onClick={() => handleOptionClick(location)}
-                className={selectedLocation === location ? " " : ""}
-              >
-                {location}
-              </li>
-            ))}
-          </ul>
-        )}
+    <div className={`dropdown-container ${selectedOption ? 'selected' : showError ? 'error' : ''}`}>
+    <div className="custom-dropdown" onClick={toggleDropdown}>
+      <div className="dropdown-header">
+        <p className="selected-option">{selectedOption || 'Personality Type'}</p>
+        <p className="dropdown-icon">{isOpen ? <MdKeyboardArrowUp className="icon" /> : <MdKeyboardArrowDown className="icon" />}</p>
       </div>
+      {isOpen && (
+        <ul className="dropdown-options">
+          {locations.map((location, index) => (
+            <li key={index} onClick={() => handleOptionClick(location)} className={selectedOption === location ? 'selected' : ''}>
+              {location}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
+  </div>
   );
 };
 

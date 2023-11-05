@@ -3,9 +3,9 @@ import './LoadingSpinner.css'
 
 const LoadingSpinner = () => {
   return (
-    <div className="loading-spinner">
-     <p> The model is Predicting...</p>
-    </div>
+    <div className="loader-container">
+    <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+  </div>
   );
 };
 

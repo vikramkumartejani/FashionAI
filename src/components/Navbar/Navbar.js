@@ -1,23 +1,40 @@
 import React, { useState } from "react";
 import { FaBarsStaggered } from "react-icons/fa6";
-import { IoCloseSharp } from "react-icons/io5";
+import {IoMdClose} from 'react-icons/io'
 import "./navbar.css";
 
 const Navbar = () => {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [toggle, setToggle] = useState(false);
 
-    const toggleMobileMenu = () => {
-        setIsMobileMenuOpen(!isMobileMenuOpen);
+    const handleToggle = () => {
+        setToggle(!toggle);
     };
 
-    const closeMobileMenu = () => {
-        setIsMobileMenuOpen(false);
+    const handleClose = () => {
+        setToggle(false);
     };
 
     return (
         <div className="nav-container">
             <div className="navbar-container">
+                <div className="toggle-menu" onClick={handleToggle}>
+                    <FaBarsStaggered className="toggle-icon" />
+                </div>
                 <div className="links-container">
+                    <ul>
+                        <li>
+                            <a href="/">FashionAI</a>
+                        </li>
+                    </ul>
+                </div>
+                <div></div>
+            </div>
+
+            <div className={`toggle-box ${toggle ? "open" : "closed"}`}>
+                <div className="close-btn" onClick={handleClose}>
+                    <IoMdClose className="close-icon"/>
+                </div>
+                <div className="nav-links">
                     <ul>
                         <li>
                             <a href="/">Home</a>
@@ -25,32 +42,12 @@ const Navbar = () => {
                         <li>
                             <a href="/">About Us</a>
                         </li>
+                        <li>
+                            <a href="/">Contact Us</a>
+                        </li>
                     </ul>
                 </div>
-                <div className="toggle-menu">
-                    <FaBarsStaggered onClick={toggleMobileMenu} className="toggle-icon" />
-                </div>
             </div>
-            {isMobileMenuOpen && (
-                <div className="mobile_navigation">
-                    <div className="navigation-links">
-                        <div className="close-nav" onClick={closeMobileMenu}>
-                            <IoCloseSharp />
-                        </div>
-                        <ul>
-                            <li>
-                                <a href="/">Home</a>
-                            </li>
-                            <li>
-                                <a href="/">About Us</a>
-                            </li>
-                            <li>
-                                <a href="/">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            )}
         </div>
     );
 };

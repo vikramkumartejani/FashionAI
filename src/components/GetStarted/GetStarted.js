@@ -1,14 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import { BsQuestion } from 'react-icons/bs';
 import CustomDropdown from '../Dropdown/Dropdown';
-import './getstarted.css'
-import { Tooltip as ReactTooltip } from "react-tooltip";
-import { Link } from 'react-router-dom';
+import './getstarted.css';
+import { Tooltip as ReactTooltip } from 'react-tooltip';
+import { useNavigate } from 'react-router-dom';
 import Footer from '../Footer/Footer';
+import Profile from '../../assets/Profile.png'
 
 const GetStarted = () => {
     const [modalIsOpen, setIsOpen] = useState(false);
+    const [selectedOption, setSelectedOption] = useState('');
+    const [showError, setShowError] = useState(false);
+    const navigate = useNavigate();
 
     function openModal() {
         setIsOpen(true);
@@ -17,13 +21,23 @@ const GetStarted = () => {
     function closeModal() {
         setIsOpen(false);
     }
+
+    const handleSubmit = () => {
+        if (!selectedOption) {
+            setShowError(true);
+        } else {
+            setShowError(false);
+            navigate('/product');
+        }
+    };
+
     return (
         <>
-            <div className='main-container-get'>
-                <div className='get-started-container'>
+            <div className="main-container-get">
+                <div className="get-started-container">
                     <p>
-                        AI revolutionizes industries, predicting outcomes and fostering innovation.
-                        Its cognitive abilities empower efficient decision-making, transforming the way we live and work.
+                        AI revolutionizes industries, predicting outcomes and fostering innovation. Its cognitive abilities empower
+                        efficient decision-making, transforming the way we live and work.
                     </p>
                     <button onClick={openModal}>Get Started</button>
                 </div>
@@ -31,32 +45,29 @@ const GetStarted = () => {
                 {modalIsOpen && (
                     <div className="modal">
                         <div className="modal-content">
-                            <div className='about-you' >
-                                About You<BsQuestion className='icon-about-you' data-tooltip-id="my-tooltip-1" />
+                            <div className="about-you">
+                                About You<BsQuestion className="icon-about-you" data-tooltip-id="my-tooltip-1" />
                                 <ReactTooltip
                                     id="my-tooltip-1"
                                     place="bottom"
-                                    content="The more the details you provide about yourelf the more accurate the prediction will be.."
+                                    content="The more the details you provide about yourself the more accurate the prediction will be.."
                                 />
                             </div>
-                            <div className='drop-down-container'>
+                            <div className="drop-down-container">
                                 <div className="image-avotor">
                                     <input type="file" id="file" className="hidden" />
-                                    <label
-                                        for="file"
-                                        className="text-border cursor-pointer flex flex-col items-center justify-center text-center p-7 gap-2 text-sm font-extrabold"
-                                    >
-                                        Avator <br /> Optional
+                                    <label for="file">
+                                        <img src={Profile} alt='profile' />
                                     </label>
                                 </div>
-                                <CustomDropdown />
-                                <div className='personality-content'>
-                                    <textarea placeholder='A few words about your personality...' />
+                                <CustomDropdown showError={showError} handleDropdownChange={setSelectedOption} />
+                                <div className="personality-content">
+                                    <textarea placeholder="A few words about your personality..." />
                                 </div>
                             </div>
-                            <Link to='/product'>
-                                <button className='submit'>Submit</button>
-                            </Link>
+                            <button className="submit" onClick={handleSubmit}>
+                                Submit
+                            </button>
 
                             {/* Close Modal */}
                             <button className="close" onClick={closeModal}>
@@ -68,7 +79,7 @@ const GetStarted = () => {
             </div>
             <Footer />
         </>
-    )
-}
+    );
+};
 
-export default GetStarted
+export default GetStarted;
